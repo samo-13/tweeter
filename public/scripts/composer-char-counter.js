@@ -5,6 +5,7 @@ $(document).ready(function() { // don't execute anything until the DOM loads
   $("#tweet-text-area").keyup(function() {
     let characterLength = maxCharacters - $(this).val().length;
     
-  $(".counter").text(characterLength);
+  $(".counter").text(characterLength); // display the characterLength value in he counter 
+  $(".counter").css("color", (characterLength < 0) ? "red" : "black"); // change counter text color to red if less than 0 remaining
   })
 });
