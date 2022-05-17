@@ -1,0 +1,43 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  padding-top: 60px;
+  align-content: flex-start;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+textarea {
+  min-width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 4px solid grey;
+}
+
+button {
+    font-family: 'Bungee', sans-serif;
+    color: white;
+    background-color: navy;
+    padding: 10px;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+  padding: 5;
+  color: darkslategrey;
+}
+
+#tweet-footer {
+  padding-top: 20px;
+  padding-bottom: 60px;
+  font-family: 'Bungee', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* for what are you humming about text */
+label {
+  color: darkslategrey;
+}
