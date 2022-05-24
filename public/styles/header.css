@@ -2,6 +2,7 @@ header.main {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   height: 400px;
+  margin-top: 120px;
   background-color: orange;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   padding-left: 1.5em;
