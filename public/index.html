@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -37,7 +38,7 @@
       </div>
   </nav>
 
-  <header>
+  <header class="main">
     <div>
         <img src="/images/profile-hex.png"> 
     </div>
@@ -51,6 +52,8 @@
     <main class="container">
       <h1>Test h1</h1>
       <h2>Test h2</h2>
+      <h3>Test h3</h3>
+      <h4>Test h4</h4>
       <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</p>
 
       <section class="new-tweet">
@@ -64,7 +67,27 @@
           </div>
         </form>
       </section>
-      </main>
 
+      <section id="tweet-container">
+        <header class="tweet">
+          <div id="tweet-left">
+          <i id="user-icon" class="fa-regular fa-face-flushed fa-2xl"></i>
+          <h2 id="user-name">George</h2>
+        </div>
+          <h2 id="user-handle">@georgedog</h2>
+        </header>
+        <article>
+          <h3>This is an example tweet!</h3>
+        </article>
+        <footer class="tweet">
+          <h3 id="day-count">10 days ago</h3>
+          <div id="social-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>        
+            <i class="fa-solid fa-heart"></i>
+         </div>
+        </footer>
+      </section>
+    </main>
   </body>
 </html>

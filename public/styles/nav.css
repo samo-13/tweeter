@@ -29,6 +29,6 @@ div.nav-right {
   justify-content: center;
 }
 
-i.fa-solid {
+i.fa-solid.fa-angles-down{
   color: red;
 }
