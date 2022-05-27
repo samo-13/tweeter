@@ -1,5 +1,4 @@
-
-#tweet-container {
+article {
   display: flex;
   flex-direction: column;
   min-width: 100%;
@@ -10,7 +9,7 @@
   margin-bottom: 40px
 }
 
-#tweet-container:hover {
+article:hover {
   box-shadow: 5px 5px 0  lightskyblue;
 }
 

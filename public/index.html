@@ -19,12 +19,12 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- App JS moved here to not impact html on load -->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   </head>
 
@@ -49,12 +49,7 @@
 </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <h1>Test h1</h1>
-      <h2>Test h2</h2>
-      <h3>Test h3</h3>
-      <h4>Test h4</h4>
-      <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</p>
+    <main id="tweets-container">
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
@@ -68,26 +63,27 @@
         </form>
       </section>
 
-      <section id="tweet-container">
-        <header class="tweet">
-          <div id="tweet-left">
-          <i id="user-icon" class="fa-regular fa-face-flushed fa-2xl"></i>
-          <h2 id="user-name">George</h2>
-        </div>
-          <h2 id="user-handle">@georgedog</h2>
-        </header>
-        <article>
-          <h3>This is an example tweet!</h3>
+          <article>
+            <header id="tweet">
+              <div class="left">
+              <i id="user-icon" class="fa-regular fa-face-flushed fa-2xl"></i>
+              <h2 id="user-name"></h2>
+              </div>
+              <h2 id="user-handle"></h2>
+            </header>
+            <h3 class="tweet-content"></h3>
+          <footer class="tweet">
+            <h3 id="day-count"></h3>
+            <div id="social-icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>        
+              <i class="fa-solid fa-heart"></i>
+          </div>
+          </footer>
         </article>
-        <footer class="tweet">
-          <h3 id="day-count">10 days ago</h3>
-          <div id="social-icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>        
-            <i class="fa-solid fa-heart"></i>
-         </div>
-        </footer>
+        
       </section>
+
     </main>
   </body>
 </html>
