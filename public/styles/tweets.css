@@ -56,9 +56,9 @@ footer.tweet {
   color: lightsteelblue;
 }
 
-#day-count {
+/* #day-count {
   /* background-color: orange; */
-}
+/* } */
 
 #social-icons {
   display: flex;
@@ -77,8 +77,4 @@ footer.tweet {
 .fa-retweet:hover,  
 .fa-flag:hover {
   color: orange;
-}
-
-article {
-  /* background-color: lightgreen; */
 }
