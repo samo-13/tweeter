@@ -13,19 +13,21 @@ article:hover {
   box-shadow: 5px 5px 0  lightskyblue;
 }
 
-#tweet-left {
-  display: flex;
-  align-content: rows;
-  align-items: center;
-  padding-left: 6px;
-}
-
-header.tweet {
+/* tweet header */
+header.tweet-whole {
   display: flex;
   justify-content: space-between;
   align-content: rows;
   align-items: center;
   position: relative;
+}
+
+/* tweet header */
+div.tweet-left{ 
+  display: flex;
+  align-content: rows;
+  align-items: center;
+  padding-left: 6px;
 }
 
 footer.tweet {

@@ -45,23 +45,23 @@ $(document).ready(function() {
 
     const $tweet =
       $(`
-      <article class="tweet">
-      <header id="tweet">
-        <div class="left">
-        <img id="user-icon" src="${tweet.user.avatars}">
-        <h2 id="user-name">${tweet.user.name}</h2>
-        </div>
-        <h2 id="user-handle">${tweet.user.handle}</h2>
-      </header>
+      <article>
+        <header class="tweet-whole">
+          <div class="tweet-left">
+          <img id="user-icon" src="${tweet.user.avatars}">
+          <h2 id="user-name">${tweet.user.name}</h2>
+          </div>
+          <h2 id="user-handle">${tweet.user.handle}</h2>
+        </header>
         <h3 class="tweet-content">${tweet.content.text}</h3>
-      <footer class="tweet">
+        <footer class="tweet">
         <h3 id="day-count">${tweet.created_at}</h3>
-      <div id="social-icons">
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>        
-        <i class="fa-solid fa-heart"></i>
-    </div>
-    </footer>
+        <div id="social-icons">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>        
+          <i class="fa-solid fa-heart"></i>
+      </div>
+      </footer>
     </article>
     `)
 
