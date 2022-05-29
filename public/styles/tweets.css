@@ -4,12 +4,19 @@ article {
   min-width: 100%;
   align-content: flex-start;
   font-family: 'Source Sans Pro', sans-serif;
-  border: 4px solid grey;
-  padding: 20px;
-  margin-bottom: 40px
 }
 
-article:hover {
+#each-tweet {
+  display: flex;
+  border: 4px solid grey;
+  padding: 20px;
+  margin-bottom: 40px;
+  flex-direction: column;
+  min-width: 100%;
+  align-content: flex-start;
+}
+
+#each-tweet:hover {
   box-shadow: 5px 5px 0  lightskyblue;
 }
 

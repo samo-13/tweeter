@@ -10,7 +10,7 @@ $(document).ready(function() {
     // code creating the tweet element
     const $tweet =
         $(`
-        <article>
+        <div id="each-tweet">
           <header class="tweet-whole">
             <div class="tweet-left">
             <img id="user-icon" src="${tweet.user.avatars}">
@@ -20,14 +20,14 @@ $(document).ready(function() {
           </header>
           <h3 class="tweet-content">${tweet.content.text}</h3>
           <footer class="tweet">
-          <h3 id="day-count">${timeago.format(tweet.created_at)}</h3>
-          <div id="social-icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>        
-            <i class="fa-solid fa-heart"></i>
-        </div>
+            <h3 id="day-count">${timeago.format(tweet.created_at)}</h3>
+            <div id="social-icons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>        
+              <i class="fa-solid fa-heart"></i>
+            </div>
         </footer>
-      </article>
+        </div>
       `);
     console.log('createTweetElement tweet:', $tweet);
     return $tweet;
@@ -57,7 +57,7 @@ $(document).ready(function() {
       let tweet = tweets[i];
       tweet = createTweetElement(tweet); // calls createTweetElement for each tweet
       console.log('renderTweets createTweetElement tweet:', tweet);
-      $('#tweets-container').append(tweet);// takes return value and appends it to the tweets container
+      $('article').prepend(tweet);// takes return value and prepends it to the tweets container
       // to add it to the page so we can make sure it's got all the right elements, classes, etc.
     }
   };
