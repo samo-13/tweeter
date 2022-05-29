@@ -6,9 +6,9 @@
 
 $(document).ready(function() {
 
-    const createTweetElement = (tweet) => {
+  const createTweetElement = (tweet) => {
     // code creating the tweet element
-      const $tweet =
+    const $tweet =
         $(`
         <article>
           <header class="tweet-whole">
@@ -28,72 +28,71 @@ $(document).ready(function() {
         </div>
         </footer>
       </article>
-      `)
-      console.log('createTweetElement tweet:', $tweet);
-      return $tweet;
-    };
+      `);
+    console.log('createTweetElement tweet:', $tweet);
+    return $tweet;
+  };
 
-    const loadTweets = function() {
-      console.log('loadTweets function')
+  const loadTweets = function() {
+    console.log('loadTweets function');
 
-          $.ajax({ 
-            url: '/tweets',
-            method: 'GET' 
-          })
-
-          .then(function(tweets) {
-            console.log('Success: See tweets', tweets);
-           renderTweets(tweets);
-          })
-    }
-    
-    loadTweets();
-
-    const renderTweets = (tweets) => {
-      console.log('renderTweets tweets:', tweets)
-      for(let i = 0; i < tweets.length; i++) { // loops through tweets
-        console.log('renderTweets tweets:', tweets);
-        console.log('renderTweets tweets[i]:', tweets[i]);
-        let tweet = tweets[i]
-        tweet = createTweetElement(tweet); // calls createTweetElement for each tweet
-        console.log('renderTweets createTweetElement tweet:', tweet);
-        $('#tweets-container').append(tweet);// takes return value and appends it to the tweets container
-        // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-      }
-    }
-
-    // set up event listener for submit event    
-    // e = event handler
-    $('form').on('submit', function(e) {
-      // inside event handler -- prevent default form submission behaviour
-      e.preventDefault();
-      // get data from the form
-      // data is formatted as a query string (https://en.wikipedia.org/wiki/Query_string)
-      // common format of a query string is field-value pairs field1=value1&field2=value2
-      // jQuery .serialize() function turns a set of form data into a query string
-      // the serialized data should be sent to the server in the data field of the AJAX POST request
-      let tweet = $(this).serialize();
-      console.log('this.text:', this.text);
-      console.log('this:', this)
-      console.log('tweet:', tweet)
-      // ajax method sends the data to the server
-      $.ajax({
-        // type of request
-        method: 'POST',
-        // where the request is sent
-        url: '/tweets',
-        // data to send
-        data: tweet,
-        // change the tweets html element to show the new tweet
-        success: (tweet) => {
-          console.log('request succeeded see tweet:', tweet);
-          loadTweets();
-        },
-        error: (error) => {
-          console.log('request failed:', error);
-        }
+    $.ajax({
+      url: '/tweets',
+      method: 'GET'
     })
-  })
+
+      .then(function(tweets) {
+        console.log('Success: See tweets', tweets);
+        renderTweets(tweets);
+      });
+  };
+    
+  loadTweets();
+
+  const renderTweets = (tweets) => {
+    console.log('renderTweets tweets:', tweets);
+    for (let i = 0; i < tweets.length; i++) { // loops through tweets
+      console.log('renderTweets tweets:', tweets);
+      console.log('renderTweets tweets[i]:', tweets[i]);
+      let tweet = tweets[i];
+      tweet = createTweetElement(tweet); // calls createTweetElement for each tweet
+      console.log('renderTweets createTweetElement tweet:', tweet);
+      $('#tweets-container').append(tweet);// takes return value and appends it to the tweets container
+      // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+    }
+  };
+
+  // set up event listener for submit event
+  $('form').on('submit', function(eventHandler) {
+    // inside event handler -- prevent default form submission behaviour
+    eventHandler.preventDefault();
+    // get data from the form
+    // data is formatted as a query string (https://en.wikipedia.org/wiki/Query_string)
+    // common format of a query string is field-value pairs field1=value1&field2=value2
+    // jQuery .serialize() function turns a set of form data into a query string
+    // the serialized data should be sent to the server in the data field of the AJAX POST request
+    let tweet = $(this).serialize();
+    console.log('this.text:', this.text);
+    console.log('this:', this);
+    console.log('tweet:', tweet);
+    // ajax method sends the data to the server
+    $.ajax({
+      // type of request
+      method: 'POST',
+      // where the request is sent
+      url: '/tweets',
+      // data to send
+      data: tweet,
+      // change the tweets html element to show the new tweet
+      success: (tweet) => {
+        console.log('request succeeded see tweet:', tweet);
+        loadTweets();
+      },
+      error: (error) => {
+        console.log('request failed:', error);
+      }
+    });
+  });
   loadTweets();
 });
 
