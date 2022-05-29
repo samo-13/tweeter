@@ -66,6 +66,15 @@ $(document).ready(function() {
   $('form').on('submit', function(eventHandler) {
     // inside event handler -- prevent default form submission behaviour
     eventHandler.preventDefault();
+
+
+    // form validation
+    // The user should be given an error that their tweet content is too long or 
+    // that it is not present (ideally separate messages for each scenario)
+    //     The form should not be cleared
+    //     The form should not submit
+
+
     // get data from the form
     // data is formatted as a query string (https://en.wikipedia.org/wiki/Query_string)
     // common format of a query string is field-value pairs field1=value1&field2=value2
@@ -74,7 +83,16 @@ $(document).ready(function() {
     let tweet = $(this).serialize();
     console.log('this.text:', this.text);
     console.log('this:', this);
-    console.log('tweet:', tweet);
+    console.log('tweet:', tweet); // shows tweet= need to account for this
+
+    if (tweet.length - 5 === 0) { // removes the tweet= characters
+      alert('Please add some text to your tweet')
+    }
+
+    if (tweet.length >= 146) { // added 5 onto due to tweet=
+      alert('Oops, please adjust your character count to below 140')
+    }
+
     // ajax method sends the data to the server
     $.ajax({
       // type of request
