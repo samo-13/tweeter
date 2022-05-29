@@ -20,7 +20,7 @@ $(document).ready(function() {
           </header>
           <h3 class="tweet-content">${tweet.content.text}</h3>
           <footer class="tweet">
-          <h3 id="day-count">${tweet.created_at}</h3>
+          <h3 id="day-count">${timeago.format(tweet.created_at)}</h3>
           <div id="social-icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>        
