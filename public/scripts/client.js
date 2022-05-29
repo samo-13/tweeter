@@ -32,13 +32,16 @@ $(document).ready(function() {
       }
     ]
 
-  const renderTweets = (tweets) => {
-    for(let i = 0; i < data.length; i++) { // loops through tweets
-      let tweet = data[i]
-      const $tweet = createTweetElement(tweet); // calls createTweetElement for each tweet
-      $('#tweets-container').append($tweet);// takes return value and appends it to the tweets container
-      // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-    }}
+    // real data  from data/initial-tweet
+
+    const renderTweets = (tweets) => {
+      for(let i = 0; i < data.length; i++) { // loops through tweets
+        let tweet = data[i]
+        const $tweet = createTweetElement(tweet); // calls createTweetElement for each tweet
+        $('#tweets-container').append($tweet);// takes return value and appends it to the tweets container
+        // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+      }
+    }
 
     const createTweetElement = (tweet) => {
     // code creating the tweet element
@@ -64,14 +67,42 @@ $(document).ready(function() {
       </footer>
     </article>
     `)
+    };
 
-    return $tweet;
-
-  };
-
-  renderTweets(data);
-  
+    // set up event listener for submit event    
+    // e = event handler
+    $('form').on('submit', function(e) {
+      // inside event handler -- prevent default form submission behaviour
+      e.preventDefault();
+      // get data from the form
+      // data is formatted as a query string (https://en.wikipedia.org/wiki/Query_string)
+      // common format of a query string is field-value pairs field1=value1&field2=value2
+      // jQuery .serialize() function turns a set of form data into a query string
+      // the serialized data should be sent to the server in the data field of the AJAX POST request
+      let tweet = $(this).serialize();
+      console.log(this.text);
+      console.log(this)
+      console.log('tweet:', tweet)
+      // ajax method sends the data to the server
+      $.ajax({
+        // type of request
+        method: 'POST',
+        // where the request is sent
+        url: '/tweets',
+        // data to send
+        data: tweet,
+        // change the tweets html element to show the new tweet
+        success: (tweet) => {
+          console.log('request succeeded:', tweet);
+        },
+        error: (error) => {
+          console.log('request failed:', error);
+        }
+    })
+  })
 });
+
+renderTweets(data);
 
 // Test / driver code (temporary). Eventually will get this from the server.
 // const tweetData = {
