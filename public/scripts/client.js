@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   const createTweetElement = (tweet) => {
     // code creating the tweet element
+  
     const $tweet =
         $(`
         <div id="each-tweet">
@@ -30,7 +31,7 @@ $(document).ready(function() {
         </div>
       `);
     console.log('createTweetElement tweet:', $tweet);
-    return $tweet;
+    return $tweet; 
   };
 
   const loadTweets = function() {
@@ -93,6 +94,7 @@ $(document).ready(function() {
       alert('Oops, please adjust your character count to below 140')
     }
 
+    $("<textarea>").text(tweet);
     // ajax method sends the data to the server
     $.ajax({
       // type of request
