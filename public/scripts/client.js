@@ -119,10 +119,11 @@ $(document).ready(function() {
           $('.form').trigger("reset"); // empty form if submission is successful
           $(".counter").val("140"); // reset counter if submission is successful
           loadTweets();
-        },
-        error: (error) => {
-          console.log('request failed:', error);
-        }
+        
+        }//,
+        // error: (error) => {
+        //   console.log('request failed:', error);
+        // }
       });
     })
   loadTweets();
