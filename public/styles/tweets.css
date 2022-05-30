@@ -27,6 +27,7 @@ header.tweet-whole {
   align-content: rows;
   align-items: center;
   position: relative;
+  padding-top: 20px;
   padding-bottom: 60px;
 }
 
@@ -46,22 +47,22 @@ div.tweet-left{
   font-weight: bold;
 }
 
-footer.tweet {
+footer {
   display: flex;
   /* background-color: salmon; */
   justify-content: space-between;
   align-content: rows;
   align-items: center;
   border-top: solid 4px darkslategray;
-  padding-bottom: 20px;
   padding: .25em;
   font-size: 18px;
   size: 20em;
+  padding-bottom: 20px;
 }
 
 #user-name {
   display: flex;
-  padding-left: .25em;
+  padding-left: .7em;
 }
 
 #user-icon {
@@ -70,6 +71,7 @@ footer.tweet {
 }
 
 #user-handle {
+  font-weight: bold;
   color: lightsteelblue;
 }
 
