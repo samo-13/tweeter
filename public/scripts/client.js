@@ -34,7 +34,7 @@ $(document).ready(function() {
         </div>
       `);
     console.log('createTweetElement tweet:', $tweet);
-    return $tweet; 
+    return $tweet;
   };
 
   const loadTweets = function() {
@@ -50,8 +50,6 @@ $(document).ready(function() {
         renderTweets(tweets);
       });
   };
-    
-  loadTweets();
 
   const renderTweets = (tweets) => {
     console.log('renderTweets tweets:', tweets);
@@ -119,10 +117,10 @@ $(document).ready(function() {
           $('.form').trigger("reset"); // empty form if submission is successful
           $(".counter").val("140"); // reset counter if submission is successful
           loadTweets();
-        }//,
-        // error: (error) => {
-        //   console.log('request failed:', error);
-        // }
+        },
+        error: (error) => {
+          console.log('request failed:', error);
+        }
       });
     })
   loadTweets();
