@@ -22,6 +22,10 @@ button {
     padding: 10px;
 }
 
+button:hover {
+  background-color: orange;
+}
+
 .counter {
   font-family: 'Bungee', sans-serif;
   padding: 5;
