@@ -91,34 +91,41 @@ $(document).ready(function() {
 
     // check tweet length
     if (tweet.length >= 146) { // added 5 onto due to tweet=
-      $(".too-many-chars").slideDown();
-    }
+      $(".empty-form").hide()
+      $(".too-many-chars").slideDown("slow")
+      return; // stops the tweet with too many characters from being created
+    };
 
     if (tweet.length - 5 === 0) { // removes the tweet= characters
-      $(".empty-form").slideDown();
-    }
+      $(".too-many-chars").hide()
+      $(".empty-form").slideDown("slow")
+    };
 
     $("<textarea>").text(tweet);
-    // ajax method sends the data to the server
-    $.ajax({
-      // type of request
-      method: 'POST',
-      // where the request is sent
-      url: '/tweets',
-      // data to send
-      data: tweet,
-      // change the tweets html element to show the new tweet
-      success: (tweet) => {
-        console.log('request succeeded see tweet:', tweet);
-        loadTweets();
-      },
-      error: (error) => {
-        console.log('request failed:', error);
-      }
-    });
-  });
+      // ajax method sends the data to the server
+      $.ajax({
+        // type of request
+        method: 'POST',
+        // where the request is sent
+        url: '/tweets',
+        // data to send
+        data: tweet,
+        // change the tweets html element to show the new tweet
+        success: (tweet) => {
+          console.log('request succeeded see tweet:', tweet);
+          $(".too-many-chars").hide();
+          $(".empty-form").hide();
+
+          loadTweets();
+        },
+        error: (error) => {
+          console.log('request failed:', error);
+        }
+      });
+    })
   loadTweets();
-});
+})
+
 
 // Test / driver code (temporary). Eventually will get this from the server.
 // const tweetData = {
