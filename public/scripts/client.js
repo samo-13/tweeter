@@ -113,9 +113,11 @@ $(document).ready(function() {
         // change the tweets html element to show the new tweet
         success: (tweet) => {
           console.log('request succeeded see tweet:', tweet);
+          // hide error messages if shown
           $(".too-many-chars").hide();
           $(".empty-form").hide();
-
+          $('.form').trigger("reset"); // empty form if submission is successful
+          $(".counter").val("140"); // reset counter if submission is successful
           loadTweets();
         },
         error: (error) => {
