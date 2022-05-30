@@ -6,8 +6,8 @@
 
 $(document).ready(function() {
   // $('.validation-errors').hide();
-  $('.validation-error1').hide();
-  $('.validation-error2').hide();
+  $('.too-many-chars').hide();
+  $('.empty-form').hide();
 
   const createTweetElement = (tweet) => {
     // code creating the tweet element
@@ -89,13 +89,13 @@ $(document).ready(function() {
     console.log('this:', this);
     console.log('tweet:', tweet); // shows tweet= need to account for this
 
+    // check tweet length
     if (tweet.length >= 146) { // added 5 onto due to tweet=
-      $(".validation-error1").show();
-
+      $(".too-many-chars").slideDown();
     }
 
     if (tweet.length - 5 === 0) { // removes the tweet= characters
-      $(".validation-error2").show();
+      $(".empty-form").slideDown();
     }
 
     $("<textarea>").text(tweet);
