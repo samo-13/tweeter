@@ -27,6 +27,7 @@ header.tweet-whole {
   align-content: rows;
   align-items: center;
   position: relative;
+  padding-bottom: 60px;
 }
 
 /* tweet header */
@@ -37,6 +38,14 @@ div.tweet-left{
   padding-left: 6px;
 }
 
+
+.tweet-content {
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
 footer.tweet {
   display: flex;
   /* background-color: salmon; */
@@ -44,7 +53,6 @@ footer.tweet {
   align-content: rows;
   align-items: center;
   border-top: solid 4px darkslategray;
-  /* padding-top: 10px; */
   padding-bottom: 20px;
   padding: .25em;
   font-size: 18px;
@@ -79,7 +87,7 @@ footer.tweet {
 .fa-heart,
 .fa-flag,
 .fa-retweet {
-  padding-left: 6px; 
+  padding-left: 6px;
 }
 
 .fa-heart:hover, 

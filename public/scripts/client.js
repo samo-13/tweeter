@@ -18,13 +18,13 @@ $(document).ready(function() {
           <header class="tweet-whole">
             <div class="tweet-left">
             <img id="user-icon" src="${tweet.user.avatars}">
-            <h2 id="user-name">${tweet.user.name}</h2>
+            <div id="user-name">${tweet.user.name}</div>
             </div>
-            <h2 id="user-handle">${tweet.user.handle}</h2>
+            <div id="user-handle">${tweet.user.handle}</div>
           </header>
-          <h3 class="tweet-content">${tweet.content.text}</h3>
+          <div class="tweet-content">${tweet.content.text}</div>
           <footer class="tweet">
-            <h3 id="day-count">${timeago.format(tweet.created_at)}</h3>
+            <div id="day-count">${timeago.format(tweet.created_at)}</div>
             <div id="social-icons">
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-retweet"></i>        

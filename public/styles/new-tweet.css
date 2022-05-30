@@ -11,6 +11,8 @@ textarea {
   min-width: 100%;
   border: 0;
   outline: 0;
+  font-weight: bold;
+  color: darkslategray;
   background: transparent;
   border-bottom: 4px solid grey;
 }
@@ -35,7 +37,8 @@ button:hover {
 #tweet-footer {
   padding-top: 20px;
   padding-bottom: 60px;
-  font-family: 'Bungee', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: normal;
   display: flex;
   justify-content: space-between;
   align-items: center;
