@@ -18,9 +18,6 @@ This was created as an assignment for the Lighthouse Labs Web Development Bootca
 ### Tweet Container (Hover State)
 <img alt="Tweet Container (Hover State)" src="https://github.com/samo-13/tweeter/blob/master/docs/tweet-container-hover.png?raw=true">
 
-### Tweet Container (Hover State)
-<img alt="Tweet Container (Hover State)" src="https://github.com/samo-13/tweeter/blob/master/docs/tweet-container-hover.png?raw=true">
-
 ### Tweet Button (Hover State)
 <img alt="Tweet Button (Hover State)" src="https://github.com/samo-13/tweeter/blob/master/docs/tweet-button-hover.png?raw=true">
 
