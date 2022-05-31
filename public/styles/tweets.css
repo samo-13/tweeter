@@ -3,8 +3,7 @@
 article {
   display: flex;
   flex-direction: column;
-  min-width: 100%;
-  align-content: flex-start;
+  /* align-content: flex-start; */
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -14,7 +13,6 @@ article {
   padding: 20px;
   margin-bottom: 40px;
   flex-direction: column;
-  min-width: 100%;
   align-content: flex-start;
 }
 
@@ -40,7 +38,6 @@ div.tweet-left{
   align-items: center;
   padding-left: 6px;
 }
-
 
 .tweet-content {
   padding-bottom: 30px;
@@ -78,10 +75,6 @@ footer {
   color: lightsteelblue;
 }
 
-/* #day-count {
-  /* background-color: orange; */
-/* } */
-
 #social-icons {
   display: flex;
   color: darkslateblue;
@@ -101,10 +94,17 @@ footer {
   color: orange;
 }
 
+/* Mobile & Tablet Styles */
+@media only screen and (max-width: 1023px) {
+  article {
+    display: flex;
+    min-width: 100%;
+    padding: 20px;
+  }
+}
 
 /* Mobile styles */
 @media screen and (max-width: 540px) {
-
   #user-handle {
   display: none;
   }
@@ -112,20 +112,11 @@ footer {
 
 /* Desktop Styles */
 @media only screen and (min-width: 1024px) {
-
   article {
     display: flex;
+    margin-right: 60px;
+    margin-left: 60px;
     flex-direction: column;
     align-content: flex-start;
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: violet;
-  }
-
-  header.main {
-    margin-top: 180px;
-    margin-left: 60px;
-    width: 33.3%;
-    float: left;
-    justify-content: center;
   }
 }
