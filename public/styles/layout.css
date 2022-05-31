@@ -25,7 +25,7 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- 
+
 /* Mobile Styles */
  main {
   display: flex;
@@ -35,4 +35,13 @@ body {
   margin: 0 auto;
   justify-content: center;
   flex-direction: column;
+}
+
+/* Desktop Styles */
+
+@media only screen and (min-width: 1024px) {
+  .page-content {
+    display: flex;
+    flex-direction: row;
+  };
 }

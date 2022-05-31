@@ -16,5 +16,18 @@ header.main {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 40px;
   color: white;
+  padding-top: 20px;
 }
 
+
+/* Desktop Styles */
+
+@media only screen and (min-width: 1024px) {
+  header.main {
+    margin-top: 180px;
+    margin-left: 60px;
+    width: 33.3%;
+    float: left;
+    justify-content: center;
+  }
+}
