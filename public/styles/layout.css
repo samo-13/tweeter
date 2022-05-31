@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -24,7 +25,8 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
+ 
+/* Mobile Styles */
  main {
   display: flex;
   background-color: #f4f1ec;

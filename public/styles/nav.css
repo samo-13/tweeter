@@ -1,10 +1,9 @@
-
 nav {
   display: flex;
   font-family: 'Bungee', sans-serif;
   font-family: 'Bungee', sans-serif;
   height: 120px;
-  background-color: #4056A1;
+  background-color: rgba(255, 166, 0);
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -32,3 +31,52 @@ div.nav-right {
 i.fa-solid.fa-angles-down{
   color: red;
 }
+
+/* Mobil Styles */
+@media only screen and (max-width: 550px) {
+  nav {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  span.nav-title {
+    font-size: 2rem;
+  }
+
+  div.nav-right {
+    font-size: 1rem;
+}
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  nav {
+    display: flex;
+    font-family: 'Bungee', sans-serif;
+    font-family: 'Bungee', sans-serif;
+    height: 120px;
+    background-color: orange;
+    color: #FFFFFF;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    justify-content: space-between;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+  nav {
+   background-color: #4056A1;
+  }
+
+  div.nav-right {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+};
