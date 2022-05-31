@@ -53,43 +53,42 @@ $(document).ready(function() {
 
   // set up event listener for submit event
   $('form').on('submit', function(eventHandler) {
-    // inside event handler -- prevent default form submission behaviour
     eventHandler.preventDefault();
     let tweet = $(this).serialize();
   
     if (tweet.length >= 146) { // add 5 due to tweet=
-      $(".empty-form").hide()
-      $(".too-many-chars").slideDown("slow")
+      $(".empty-form").hide();
+      $(".too-many-chars").slideDown("slow");
       return; // stops error tweet from being created
-    };
+    }
 
     if (tweet.length - 5 === 0) { // - 5 removes the tweet= characters
-      $(".too-many-chars").hide()
-      $(".empty-form").slideDown("slow")
-    };
+      $(".too-many-chars").hide();
+      $(".empty-form").slideDown("slow");
+    }
 
     $("<textarea>").text(tweet);
-      $.ajax({ // ajax method sends the data to the server
-        method: 'POST',
-        url: '/tweets',
-        data: tweet,
+    $.ajax({ // ajax method sends the data to the server
+      method: 'POST',
+      url: '/tweets',
+      data: tweet,
 
-        success: (tweet) => {
-          // hide error messages if shown
-          $(".too-many-chars").hide();
-          $(".empty-form").hide();
+      success: (tweet) => {
+        // hide error messages if shown
+        $(".too-many-chars").hide();
+        $(".empty-form").hide();
 
-          // empty form & reset counter if submission is successful
-          $('.form').trigger("reset");
-          $(".counter").val("140");
+        // empty form & reset counter if submission is successful
+        $('.form').trigger("reset");
+        $(".counter").val("140");
 
-          // do not remove to avoid loading tweet duplicates
-          $("article").empty();
-          loadTweets();
-        },
-        error: (error) => {
-        }
-      });
-    })
+        // do not remove to avoid loading tweet duplicates
+        $("article").empty();
+        loadTweets();
+      },
+      error: (error) => {
+      }
+    });
+  });
   loadTweets();
-})
+});
