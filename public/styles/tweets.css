@@ -100,3 +100,12 @@ footer {
 .fa-flag:hover {
   color: orange;
 }
+
+
+/* Mobile styles */
+@media screen and (max-width: 540px) {
+
+  #user-handle {
+  display: none;
+  }
+}

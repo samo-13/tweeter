@@ -1,7 +1,6 @@
 nav {
   display: flex;
   font-family: 'Bungee', sans-serif;
-  font-family: 'Bungee', sans-serif;
   height: 120px;
   background-color: rgba(255, 166, 0);
   color: #FFFFFF;
@@ -24,19 +23,19 @@ div.nav-right {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
 }
 
 i.fa-solid.fa-angles-down{
   color: red;
 }
 
-/* Mobil Styles */
+/* Mobile Styles designed for min width of 320px based on industry standard */
 @media only screen and (max-width: 550px) {
   nav {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: .8em;
+    padding-right: .8em;
   }
 
   span.nav-title {
@@ -70,13 +69,5 @@ i.fa-solid.fa-angles-down{
 @media only screen and (min-width: 1024px) {
   nav {
    background-color: #4056A1;
-  }
-
-  div.nav-right {
-    font-family: 'Source Sans Pro', sans-serif;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
   }
 };
