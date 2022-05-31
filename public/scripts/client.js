@@ -18,7 +18,7 @@ $(document).ready(function() {
           <header class="tweet-whole">
             <div class="tweet-left">
             <img id="user-icon" src="${tweet.user.avatars}">
-            <div id="user-name">${tweet.user.name}</div>
+            <h2 id="user-name">${tweet.user.name}</h2>
             </div>
             <div id="user-handle">${tweet.user.handle}</div>
           </header>
@@ -116,6 +116,7 @@ $(document).ready(function() {
           $(".empty-form").hide();
           $('.form').trigger("reset"); // empty form if submission is successful
           $(".counter").val("140"); // reset counter if submission is successful
+          $("article").empty();
           loadTweets();
         },
         error: (error) => {
