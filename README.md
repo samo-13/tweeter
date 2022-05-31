@@ -2,7 +2,30 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+This was created as an assignment for the Lighthouse Labs Web Development Bootcamp.
+
+## Final Product
+
+### Tweeter Page (Desktop)
+<img alt="Tweeter Desktop Page" src="https://github.com/samo-13/tweeter/blob/master/docs/tweeter-desktop.png?raw=true">
+
+### Tweet Section (Tablet/Mobile)
+<img alt="Tweet Section (Tablet/Mobile)" src="https://github.com/samo-13/tweeter/blob/master/docs/tweets-tablet.png?raw=true">
+
+### Error Message (Tablet/Mobile)
+<img alt="Error Message (Tablet/Mobile)" src="https://github.com/samo-13/tweeter/blob/master/docs/error-message.png?raw=true">
+
+### Tweet Container (Hover State)
+<img alt="Tweet Container (Hover State)" src="https://github.com/samo-13/tweeter/blob/master/docs/tweet-container-hover.png?raw=true">
+
+### Tweet Container (Hover State)
+<img alt="Tweet Container (Hover State)" src="https://github.com/samo-13/tweeter/blob/master/docs/tweet-container-hover.png?raw=true">
+
+### Tweet Button (Hover State)
+<img alt="Tweet Button (Hover State)" src="https://github.com/samo-13/tweeter/blob/master/docs/tweet-button-hover.png?raw=true">
+
+### Character Counter
+<img alt="Character Counter" src="https://github.com/samo-13/tweeter/blob/master/docs/character-counter.png?raw=true">
 
 ## Getting Started
 
@@ -16,3 +39,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- "body-parser": "^1.20.0",
+- "chance": "^1.1.8",
+- "express": "^4.18.1",
+- "md5": "^2.3.0",
+- "timeago.js": "^4.0.2"
